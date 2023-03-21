@@ -5,10 +5,21 @@ function optimizer(data) {
   }
   return result;
 };
+
+function optimizer2(data) {
+  const result = {};
+  Object.entries(data).map(arr => result[arr[0].toLowerCase()] = parseFloat(arr[1]).toFixed(2))
+  return result;
+};
+
 const priceData = {
   Apples: '23.4',
   BANANAS: '48',
   oRAngGEs: '48.7584',
 };
+
 let updatedPriceData = optimizer(priceData);
+console.log(updatedPriceData)
+
+updatedPriceData = optimizer2(priceData);
 console.log(updatedPriceData)
