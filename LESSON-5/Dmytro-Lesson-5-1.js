@@ -1,7 +1,7 @@
 function dateDiff(startDateStr = '1 Jan 2022', endDateStr = '1 Jan 2023', unit = 'seconds') {
     const startDate = Date.parse(startDateStr);
     const endDate = Date.parse(endDateStr);
-    let result = Math.abs(endDate - startDate);
+    const result = Math.abs(endDate - startDate);
     const unitTime = {
       'seconds' : 1000,
       'minutes' :  (1000 * 60),

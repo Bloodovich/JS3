@@ -7,8 +7,11 @@ function optimizer(data) {
 };
 
 function optimizer2(data) {
-  const result = {};
-  Object.entries(data).map(arr => result[arr[0].toLowerCase()] = parseFloat(arr[1]).toFixed(2))
+  const result = Object.entries(data).reduce((acc, [key, value]) => {
+    acc[key.toLowerCase()] = parseFloat(value).toFixed(2);
+    return acc;
+  }, {});
+  
   return result;
 };
 

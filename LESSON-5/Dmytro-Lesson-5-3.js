@@ -2,10 +2,10 @@ function recursiveOddSumTo(number) {
     if (number <= 1) {
       return 1;
     }  
-    if (number % 2 === 1) {
-      return number + recursiveOddSumTo(number - 2);
+    if (number % 2 === 0) {
+      return recursiveOddSumTo(number - 1);
     }
-    return recursiveOddSumTo(number - 1);
+    return number + recursiveOddSumTo(number - 2);
     
   }
   function iterativeOddSumTo(number) {
