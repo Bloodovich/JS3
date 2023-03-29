@@ -1,7 +1,5 @@
-detonatorTimer(3);
-
 function detonatorTimer(delay) {
-    if (delay == 0) {
+    if (delay === 0) {
         console.log("BOOM!"); 
         return;
     };
@@ -10,8 +8,8 @@ function detonatorTimer(delay) {
 }
 
 function detonatorTimer(delay) {
-    let myInterval = setInterval(() => {
-        if (delay == 0){
+    const myInterval = setInterval(() => {
+        if (delay === 0){
             console.log('BOOM!');
             clearInterval(myInterval);
             return;
@@ -21,4 +19,5 @@ function detonatorTimer(delay) {
     }, 1000);
 }
 
+detonatorTimer(3);
 // setTimeout(() => console.log(i), 1000);

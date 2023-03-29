@@ -1,10 +1,6 @@
-function addThemAll(...arguments) {
-    let sum = 0;
-    for (const num of arguments){
-        sum = num + sum
-    }
-    return sum;
-  }
+function addThemAll(...args) {
+  return args.reduce((sum, num) => sum + num, 0);
+}
 console.log(addThemAll(2,4)); // 6
 console.log(addThemAll(1,2,3,4)); // 10
 console.log(addThemAll(5,5,10)); // 20

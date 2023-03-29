@@ -25,23 +25,21 @@ const movies = [
     },
     ];
 
-    console.log(movies.sort(byProperty('releaseYear', '>')));
-    console.log(movies.sort(byProperty('runningTimeInMinutes', '<')));
-    console.log(movies.sort(byProperty('movieName', '>')));
-    console.log(movies.sort(byProperty('directedBy', '>')));
-
-    function byProperty(property, direction) {
-       return function(a,b) {
-        let sign = 1;
-        if (direction == '<')
-            sign = -1;
-
-        if (a[property] > b[property])
-            return sign;
-
-        if (a[property] < b[property])
-            return -sign;
-        return 0;
-       }
-      }
-      
+const byProperty = (property, direction) => (a, b) => {
+    let sign = 1;
+    if (direction == '<')
+      sign = -1;
+    if (a[property] > b[property])
+      return sign;
+    if (a[property] < b[property])
+      return -sign;
+    return 0;
+  };
+  
+  console.log(movies.sort(byProperty('releaseYear', '>')));
+  console.log(movies.sort(byProperty('runningTimeInMinutes', '<')));
+  console.log(movies.sort(byProperty('movieName', '>')));
+  console.log(movies.sort(byProperty('directedBy', '>')));
+  
+  
+    
